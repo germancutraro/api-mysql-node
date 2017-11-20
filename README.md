@@ -1,6 +1,7 @@
 # CRUD API MySQL - Node - Express  
 
-Simple api using node - mysql **Sorry for the interface :/, I focused on the backend**
+Simple api using node - mysql. 
+**Sorry for the interface :/, I focused on the backend**
 
 ## Instalation
 
