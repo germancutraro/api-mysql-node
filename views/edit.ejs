@@ -1,0 +1,33 @@
+<% include partials/head %>
+<body>
+  <h1>Complete the data:</h1>
+  <% if (result.length === 1) { %>
+    <form action="/api/create" id="form-update">
+      <% result.forEach(user => { %>
+        <input type="text" name="name" placeholder="name" value="<%= user.name %>" id="name-field">
+        <input type="text" name="surname" placeholder="surname" value="<%= user.surname %>" id="surname-field">
+        <input type="submit" value="Update">
+      <% }); %>
+    </form>
+  <% } else { %>
+    <h2>No user found!</h2>
+  <% } %>
+  <% include partials/scripts %>
+  <script>
+    const form = document.querySelector('#form-update');
+    let name = document.querySelector('#name-field'),
+        surname = document.querySelector('#surname-field');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        let url = location.href;
+        console.log(url);
+        axios.put(url, {
+          name: name.value,
+          surname: surname.value
+        })
+        .then(res => location.href = '/api/users')
+        .catch(err => console.log(err));
+      });
+  </script>
+</body>
+</html>
