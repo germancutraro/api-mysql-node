@@ -11,9 +11,12 @@
     "helmet": "^3.9.0",
     "mysql": "^2.15.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "germancutraro",
